@@ -47,13 +47,74 @@ const INITIAL_HIGHER_LOTTERY_FEE = 500;       // this/FEE_MAGNIFIER = 0.00500 or
 
 const INITIAL_GENERAL_CHARITY = "0x8887Df2F38888117c0048eAF9e26174F2E75B8eB";
 
-const MAX_TRANSFER_AMOUNT = (1n * 10n) ** (12n + N_DECIMALS);
-const LIQUIDITY_QUANTUM = (1n * 10n) ** (5n + N_DECIMALS);
+const MAX_TRANSFER_AMOUNT = 1e12; // (1n * 10n) ** (12n + N_DECIMALS);
+const LIQUIDITY_QUANTUM = 1e5; // (1n * 10n) ** (5n + N_DECIMALS);
 const ALT_GENERAL_CHARITY_ADDRESS = (ethers.Wallet.createRandom()).address; // Arbitrary. Hope it be unique.
 
 const zero_address = '0x0000000000000000000000000000000000000000';
 
 function weiToEthEn(wei) { return Number(ethers.utils.formatUnits(wei.toString(), DECIMALS)).toLocaleString('en') }
+function weiToEth(wei) { return Number(ethers.utils.formatUnits(wei.toString(), DECIMALS)) }
+function ethToWei(eth) { return ethers.utils.parseUnits(eth.toString(), DECIMALS); }
+function uiAddr(address) { return "{0x" + address.substring(2, 6).concat('...') + "}" ; }
+async function myExpectRevert(promise, revert_string) { 
+	await promise.then(()=>expect(true).to.equal(false))
+	.catch((err)=>{
+		if( ! err.toString().includes(revert_string) )	{
+			expect(true).to.equal(false);
+		}
+	})
+};
+
+function findEvent(receipt, eventName, args) {
+	var event;
+	for(let i = 0; i < receipt.events.length; i++) {
+		if(receipt.events[i].event == eventName) {
+			event = receipt.events[i];
+			break;
+		}
+	}
+	let matching;
+	if(event != undefined) {
+		matching = true;
+		for(let i = 0; i < Object.keys(args).length; i++) {
+			let arg = Object.keys(args)[i];
+			if(event.args[arg] != undefined && parseInt(event.args[arg]) != parseInt(args[arg])) {
+				matching = false;
+				break;
+			} else if( event.args[0][arg] != undefined && parseInt(event.args[0][arg]) != parseInt(args[arg]) ) {
+				matching = false;
+				break;
+			}
+		}
+	} else {
+		matching = false;
+	}
+	return matching;
+}
+
+function retrieveEvent(receipt, eventName) {
+	var event;
+	for(let i = 0; i < receipt.events.length; i++) {
+		if(receipt.events[i].event == eventName) {
+			event = receipt.events[i];
+			break;
+		}
+	}
+	var args;
+	if(event != undefined) {
+		if(Array.isArray(event.args)) {
+			if(Array.isArray(event.args[0])) {
+				args = event.args[0];
+			} else {
+				args = event.args;
+			}
+		} else {
+			args = event.args;
+		}
+	}
+	return args;
+}
 
 describe("1. Connect to Provide-Wallet-Network.\n".green, function () {
 
@@ -180,13 +241,13 @@ describe("Deploy the initial upgradeable contract of Pledge token.", function ()
         higherFees.marketing/FEE_MAGNIFIER*100, higherFees.charity/FEE_MAGNIFIER*100, higherFees.liquidity/FEE_MAGNIFIER*100, higherFees.lottery/FEE_MAGNIFIER*100);
 
 		var maxTransferAmount = await ownerContract.maxTransferAmount();
-		expect(maxTransferAmount).to.equal(MAX_TRANSFER_AMOUNT);
-		console.log("\tmaxTransferAmount is initialized correctly: %s POCs.", ethers.utils.formatUnits(MAX_TRANSFER_AMOUNT.toString(), DECIMALS));
+		expect(maxTransferAmount).to.equal(ethToWei(MAX_TRANSFER_AMOUNT));
+		console.log("\tmaxTransferAmount is initialized correctly: %s POCs.", MAX_TRANSFER_AMOUNT.toLocaleString('En'));
 
     	// TODO: What does this liquidity quantum do?
 		var liquidityQuantum = await ownerContract.liquidityQuantum();
-		expect(liquidityQuantum).to.equal(LIQUIDITY_QUANTUM);
-		console.log("\tliquidityQuantum is initialized correctly: %s POCs.", ethers.utils.formatUnits(LIQUIDITY_QUANTUM.toString(), DECIMALS));
+		expect(liquidityQuantum).to.equal(ethToWei(LIQUIDITY_QUANTUM));
+		console.log("\tliquidityQuantum is initialized correctly: %s POCs.", LIQUIDITY_QUANTUM.toLocaleString('En'));
 
 		var generalCharityAddress = await ownerContract.generalCharityAddress();
 		expect(generalCharityAddress).to.equal(INITIAL_GENERAL_CHARITY);
