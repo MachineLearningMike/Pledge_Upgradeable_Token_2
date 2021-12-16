@@ -518,18 +518,20 @@ Initializable, ContextUpgradeable, IERC20Upgradeable, IERC20MetadataUpgradeable,
 
     function __Pledge_init_unchained() public onlyOwner {
 
-		initialLowerFees.marketing = INITIAL_LOWER_MARKETING_FEE;
-		initialLowerFees.charity = INITIAL_LOWER_CHARITY_FEE;
-		initialLowerFees.liquidity = INITIAL_LOWER_LIQUIDITY_FEE;
-		initialLowerFees.lottery = INITIAL_LOWER_LOTTERY_FEE;
-        
+        initialLowerFees = Fees(
+            INITIAL_LOWER_MARKETING_FEE,
+            INITIAL_LOWER_CHARITY_FEE,
+            INITIAL_LOWER_LIQUIDITY_FEE,
+            INITIAL_LOWER_LOTTERY_FEE
+        );       
         setFees(initialLowerFees, true); 
 
-        initialHigherFees.marketing = INITIAL_HIGHER_MARKETING_FEE;
-		initialHigherFees.charity = INITIAL_HIGHER_CHARITY_FEE;
-		initialHigherFees.liquidity = INITIAL_HIGHER_LIQUIDITY_FEE;
-		initialHigherFees.lottery = INITIAL_HIGHER_LOTTERY_FEE;
-        
+        initialHigherFees = Fees(
+            INITIAL_HIGHER_MARKETING_FEE,
+            INITIAL_HIGHER_CHARITY_FEE,
+            INITIAL_HIGHER_LIQUIDITY_FEE,
+            INITIAL_HIGHER_LOTTERY_FEE
+        );
         setFees(initialHigherFees, false);
 
         generalCharityAddress = INITIAL_GENERAL_CHARITY;
