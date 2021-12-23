@@ -44,6 +44,16 @@
       "address": "0xe8EF67c3b4fbCE2D14e46Fceb66c8bE87746e007",
       "txHash": "0x48283c7c632e43a3fe55ecbceb27d5862b8be26b79b9d5cb1ed842f5b654951c",
       "kind": "transparent"
+    },
+    {
+      "address": "0x13c14991A6DEEBd35Df0a25231598f08cEed9CBa",
+      "txHash": "0x426c30457a211580d90424550ef7e07ff4d4a99c6282b6e8fe0f945e00951dda",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x445134F298F83e8f28Ab5916397BC8751Ac61851",
+      "txHash": "0x5d8533603d5fb1ecd15c1900f4169d712254e4eb6719e22d8ef5213e34b86779",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -457,6 +467,500 @@
             "label": "__gap",
             "type": "t_array(t_uint256)10_storage",
             "src": "contracts\\Pledge07Up.sol:951"
+          },
+          {
+            "contract": "Pledge08Up",
+            "label": "operator",
+            "type": "t_address",
+            "src": "contracts\\Pledge08Up.sol:28"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_struct(Fees)7204_storage": {
+            "label": "struct Pledge07Up.Fees",
+            "members": [
+              {
+                "label": "marketing",
+                "type": "t_uint256"
+              },
+              {
+                "label": "charity",
+                "type": "t_uint256"
+              },
+              {
+                "label": "liquidity",
+                "type": "t_uint256"
+              },
+              {
+                "label": "lottery",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_struct(Beneficiaries)7222_storage": {
+            "label": "struct Pledge07Up.Beneficiaries",
+            "members": [
+              {
+                "label": "marketing",
+                "type": "t_address"
+              },
+              {
+                "label": "charity",
+                "type": "t_address"
+              },
+              {
+                "label": "liquidity",
+                "type": "t_address"
+              },
+              {
+                "label": "lottery",
+                "type": "t_address"
+              }
+            ]
+          },
+          "t_contract(IPancakeRouter02)1479": {
+            "label": "contract IPancakeRouter02"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)"
+          },
+          "t_array(t_uint256)10_storage": {
+            "label": "uint256[10]"
+          }
+        }
+      }
+    },
+    "7de8d049967c0ba1d76625af52cbae03c78a42188e38604eecaa0408758ba8ba": {
+      "address": "0x8033dBE440FfC5113704C757443950D31AD039E4",
+      "txHash": "0x905a83f5ff15021862a815a1b621357575d8d49d3b4b7f95b4f224eb44138ba7",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "contracts\\Open-Zeppelin.sol:11"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "contracts\\Open-Zeppelin.sol:16"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "contracts\\Open-Zeppelin.sol:57"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_balances",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "contracts\\Pledge07Up.sol:32"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "contracts\\Pledge07Up.sol:34"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_totalSupply",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:36"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "contracts\\Pledge07Up.sol:38"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "contracts\\Pledge07Up.sol:39"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "initialLowerFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:472"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "lowerFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:473"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "initialHigherFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:474"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "higherFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:475"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "beneficiaries",
+            "type": "t_struct(Beneficiaries)7222_storage",
+            "src": "contracts\\Pledge07Up.sol:477"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "maxTransferAmount",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:479"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "liquidityQuantum",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:480"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "minHoldTimeSec",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:481"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "pancakeRouter",
+            "type": "t_contract(IPancakeRouter02)1479",
+            "src": "contracts\\Pledge07Up.sol:483"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "pancakePair",
+            "type": "t_address",
+            "src": "contracts\\Pledge07Up.sol:484"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "generalCharityAddress",
+            "type": "t_address",
+            "src": "contracts\\Pledge07Up.sol:486"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "isCharityAddress",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "contracts\\Pledge07Up.sol:487"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "preferredCharityAddress",
+            "type": "t_mapping(t_address,t_address)",
+            "src": "contracts\\Pledge07Up.sol:488"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "isFeeFree",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "contracts\\Pledge07Up.sol:490"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "lastTransferTime",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "contracts\\Pledge07Up.sol:491"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "autoliquify",
+            "type": "t_bool",
+            "src": "contracts\\Pledge07Up.sol:493"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "beneficiariesSet",
+            "type": "t_bool",
+            "src": "contracts\\Pledge07Up.sol:494"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "liquifying",
+            "type": "t_bool",
+            "src": "contracts\\Pledge07Up.sol:575"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "__gap",
+            "type": "t_array(t_uint256)10_storage",
+            "src": "contracts\\Pledge07Up.sol:953"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_struct(Fees)7204_storage": {
+            "label": "struct Pledge07Up.Fees",
+            "members": [
+              {
+                "label": "marketing",
+                "type": "t_uint256"
+              },
+              {
+                "label": "charity",
+                "type": "t_uint256"
+              },
+              {
+                "label": "liquidity",
+                "type": "t_uint256"
+              },
+              {
+                "label": "lottery",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_struct(Beneficiaries)7222_storage": {
+            "label": "struct Pledge07Up.Beneficiaries",
+            "members": [
+              {
+                "label": "marketing",
+                "type": "t_address"
+              },
+              {
+                "label": "charity",
+                "type": "t_address"
+              },
+              {
+                "label": "liquidity",
+                "type": "t_address"
+              },
+              {
+                "label": "lottery",
+                "type": "t_address"
+              }
+            ]
+          },
+          "t_contract(IPancakeRouter02)1479": {
+            "label": "contract IPancakeRouter02"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)"
+          },
+          "t_array(t_uint256)10_storage": {
+            "label": "uint256[10]"
+          }
+        }
+      }
+    },
+    "7d243f18b21873fcd8be32955d88d29391c4fa420a91beb92937d841229afc0a": {
+      "address": "0x9eD4dDf6B284f901E51F47dEc4550B789C59a8e7",
+      "txHash": "0x24743052b5aead3f410930a2e36604883f3b23e596619b9e72dbbdd0458f7176",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "contracts\\Open-Zeppelin.sol:11"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "contracts\\Open-Zeppelin.sol:16"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "contracts\\Open-Zeppelin.sol:57"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_balances",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "contracts\\Pledge07Up.sol:32"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "contracts\\Pledge07Up.sol:34"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_totalSupply",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:36"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "contracts\\Pledge07Up.sol:38"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "contracts\\Pledge07Up.sol:39"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "initialLowerFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:472"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "lowerFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:473"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "initialHigherFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:474"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "higherFees",
+            "type": "t_struct(Fees)7204_storage",
+            "src": "contracts\\Pledge07Up.sol:475"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "beneficiaries",
+            "type": "t_struct(Beneficiaries)7222_storage",
+            "src": "contracts\\Pledge07Up.sol:477"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "maxTransferAmount",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:479"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "liquidityQuantum",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:480"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "minHoldTimeSec",
+            "type": "t_uint256",
+            "src": "contracts\\Pledge07Up.sol:481"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "pancakeRouter",
+            "type": "t_contract(IPancakeRouter02)1479",
+            "src": "contracts\\Pledge07Up.sol:483"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "pancakePair",
+            "type": "t_address",
+            "src": "contracts\\Pledge07Up.sol:484"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "generalCharityAddress",
+            "type": "t_address",
+            "src": "contracts\\Pledge07Up.sol:486"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "isCharityAddress",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "contracts\\Pledge07Up.sol:487"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "preferredCharityAddress",
+            "type": "t_mapping(t_address,t_address)",
+            "src": "contracts\\Pledge07Up.sol:488"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "isFeeFree",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "contracts\\Pledge07Up.sol:490"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "lastTransferTime",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "contracts\\Pledge07Up.sol:491"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "autoliquify",
+            "type": "t_bool",
+            "src": "contracts\\Pledge07Up.sol:493"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "beneficiariesSet",
+            "type": "t_bool",
+            "src": "contracts\\Pledge07Up.sol:494"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "liquifying",
+            "type": "t_bool",
+            "src": "contracts\\Pledge07Up.sol:575"
+          },
+          {
+            "contract": "Pledge07Up",
+            "label": "__gap",
+            "type": "t_array(t_uint256)10_storage",
+            "src": "contracts\\Pledge07Up.sol:953"
           },
           {
             "contract": "Pledge08Up",

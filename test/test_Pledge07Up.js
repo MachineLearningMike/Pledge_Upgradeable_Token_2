@@ -30,7 +30,6 @@ var eth_power = 12; // 12 is the maximum possible value on hardhat default netwo
 var eth_gas_fee_power = 17;
 
 const DECIMALS = 18;
-const N_DECIMALS = 18n;
 
 const FEE_MAGNIFIER = 100000; // Five zeroes.
 const FEE_HUNDRED_PERCENT = FEE_MAGNIFIER * 100;
